@@ -152,7 +152,7 @@
 			<plugin>
       <groupId>org.jacoco</groupId>
       <artifactId>jacoco-maven-plugin</artifactId>
-      <version>3.3.7</version>
+      <version>0.8.15</version>
       <executions>
         <!-- automatically instrument code for coverage before tests -->
         <execution>
