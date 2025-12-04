@@ -153,23 +153,6 @@
       <groupId>org.jacoco</groupId>
       <artifactId>jacoco-maven-plugin</artifactId>
       <version>0.8.12</version>
-      <!-- <executions>
-        <!-- automatically instrument code for coverage before tests -->
-        <execution>
-          <id>prepare-agent</id>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-        </execution>
-        <!-- generate coverage report after tests -->
-        <execution>
-          <id>report</id>
-          <phase>verify</phase>  <!-- or test / package, depending on your flow -->
-          <goals>
-            <goal>report</goal>
-          </goals>
-        </execution>
-      </executions> -->
     </plugin>
 </plugins>
 	</build>
