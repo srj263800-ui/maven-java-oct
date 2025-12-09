@@ -1,23 +1,12 @@
 node{
 
 def maven = tool name: "maven-1"
-
-echo "node running name: ${env.NODE_NAME} "
-
-echo "job name:  ${env.JOB_NAME} "
-
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5'))])
-properties([pipelineTriggers([pollSCM('* * * * *')])])
-
-script {
-    currentBuild.displayName = "Dev - ${env.BUILD_NUMBER}"
-    currentBuild.description = "this is for testing pipeline for oct batch"
-}
 //checkout stage
 stage('checkout'){
 
   git 'https://github.com/srj263800-ui/maven-java-oct.git'
 }
+/*
 //build stage
 stage('building'){
 sh "$maven/bin/mvn clean package"
@@ -30,6 +19,12 @@ sh "$maven/bin/mvn sonar:sonar"
 stage ('nexus upload'){
 sh "$maven/bin/mvn deploy"
 }
-
+*/
+//deploy project
+stage('deploy'){
+sshagent(['5be2e342-0979-4502-8113-2092e52491f5']) {
+sh " sudo scp -o  StrictHostKeyChecking=no trget/maven-web-application.war ec2-user@http://54.159.20.41:/opt/apache-tomcat-9.0.113/webapps"
+}
+}
 }
 }//Node closing
