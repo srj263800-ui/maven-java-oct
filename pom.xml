@@ -95,13 +95,13 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>DigiEras Technologies Releases Nexus Repository</name>
+	      <name>maven-releases</name>
 	      <url>http://52.206.72.192:8081/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>DigiEras Technologies Snapshot Nexus Repository </name>
+	      <name>maven-snapshots</name>
 	      <url>http://52.206.72.192:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
