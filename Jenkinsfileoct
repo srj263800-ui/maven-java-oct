@@ -16,7 +16,7 @@ script {
 //checkout stage
 stage('checkout'){
 
-  git 'https://github.com/sanchitraj5/maven-java-oct.git'
+  git 'https://github.com/srj263800-ui/maven-java-oct.git'
 }
 //build stage
 stage('building'){
