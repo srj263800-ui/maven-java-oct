@@ -21,13 +21,13 @@ stage('checkout'){
 //build stage
 stage('building'){
 sh "$maven/bin/mvn clean package"
-/*
+
 //sonarqube report
-stage ('sonarqubereport'){
+stage ('sonartest'){
 sh "$maven/bin/mvn sonar:sonar"
 }
 
-
+/*
 //upload nexus
 stage ('nexus upload'){
 sh "$maven/bin/mvn deploy"
