@@ -1,6 +1,6 @@
 node{
 
-def maven = tool name: "latest"
+def maven = tool name: "maven-1"
 
 echo "node running name: ${env.NODE_NAME} "
 
