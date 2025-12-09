@@ -26,13 +26,10 @@ sh "$maven/bin/mvn clean package"
 stage ('sonartest'){
 sh "$maven/bin/mvn sonar:sonar"
 }
-
-/*
 //upload nexus
 stage ('nexus upload'){
 sh "$maven/bin/mvn deploy"
 }
-*/
 
 }
 }//Node closing
