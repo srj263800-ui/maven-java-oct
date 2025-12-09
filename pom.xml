@@ -96,13 +96,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>srj-release</name>
-	      <url>http://52.206.72.192:8081/repository/srj-release/</url>
+	      <url>http://35.173.203.216:8081/repository/srj-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>srj-snapshot</name>
-	      <url>http://52.206.72.192:8081/repository/srj-snapshot/</url>
+	      <url>http://35.173.203.216:8081/repository/srj-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
