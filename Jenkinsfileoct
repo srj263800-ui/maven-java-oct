@@ -26,5 +26,4 @@ sshagent(['5be2e342-0979-4502-8113-2092e52491f5']) {
 sh " sudo scp -o  StrictHostKeyChecking=no trget/maven-web-application.war ec2-user@http://54.159.20.41:/opt/apache-tomcat-9.0.113/webapps"
 }
 }
-}
 }//Node closing
