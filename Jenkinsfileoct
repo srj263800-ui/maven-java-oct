@@ -1,28 +1,32 @@
-node{
+node {
 
-def maven = tool name: "maven-1"
-//checkout stage
-stage('checkout'){
+    def maven = tool name: "maven-1"
 
-  git 'https://github.com/srj263800-ui/maven-java-oct.git'
+    stage('checkout') {
+        git 'https://github.com/srj263800-ui/maven-java-oct.git'
+    }
+
+    /*
+    stage('building') {
+        sh "${maven}/bin/mvn clean package"
+    }
+
+    stage('sonartest') {
+        sh "${maven}/bin/mvn sonar:sonar"
+    }
+
+    stage('nexus upload') {
+        sh "${maven}/bin/mvn deploy"
+    }
+    */
+
+    stage('deploy') {
+        sshagent(['5be2e342-0979-4502-8113-2092e52491f5']) {
+            sh """
+                scp -o StrictHostKeyChecking=no \
+                target/maven-web-application.war \
+                ec2-user@3.80.85.229:/opt/apache-tomcat-9.0.113/webapps/
+            """
+        }
+    }
 }
-//build stage
-stage('building'){
-sh "$maven/bin/mvn clean package"
-/*
-//sonarqube report
-stage ('sonartest'){
-sh "$maven/bin/mvn sonar:sonar"
-}
-//upload nexus
-stage ('nexus upload'){
-sh "$maven/bin/mvn deploy"
-}
-*/
-//deploy project
-stage('deploy'){
-sshagent(['5be2e342-0979-4502-8113-2092e52491f5']){
-sh " sudo scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.80.85.229:/opt/apache-tomcat-9.0.113/webapps"
-}
-}
-}//Node closing
