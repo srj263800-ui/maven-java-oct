@@ -6,11 +6,10 @@ stage('checkout'){
 
   git 'https://github.com/srj263800-ui/maven-java-oct.git'
 }
-/*
 //build stage
 stage('building'){
 sh "$maven/bin/mvn clean package"
-
+/*
 //sonarqube report
 stage ('sonartest'){
 sh "$maven/bin/mvn sonar:sonar"
