@@ -1,9 +1,8 @@
 node{
 
-def maven = tool name: "maven-1"
+def maven = tool name: "maven-3.9.10"
 //checkout stage
 stage('checkout'){
-
   git 'https://github.com/srj263800-ui/maven-java-oct.git'
 }
 //build stage
